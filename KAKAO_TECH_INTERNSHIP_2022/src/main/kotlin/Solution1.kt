@@ -1,4 +1,5 @@
-class Solution {
+// 성격 유형 검사하기
+class Solution1 {
     fun solution(survey: Array<String>, choices: IntArray): String {
         var answer = ""
         var character = listOf("RT", "CF", "JM", "AN")
@@ -26,6 +27,6 @@ class Solution {
 }
 
 fun main() {
-    val answer = Solution().solution(arrayOf("AN", "CF", "MJ", "RT", "NA"), intArrayOf(5, 3, 2, 7, 5))
+    val answer = Solution1().solution(arrayOf("AN", "CF", "MJ", "RT", "NA"), intArrayOf(5, 3, 2, 7, 5))
     println(answer)
 }
