@@ -1,4 +1,5 @@
-class Solution1 {
+// 메뉴 리뉴얼
+class Solution2 {
 
     var hashMap = mutableMapOf<String, Int>()
 
@@ -34,8 +35,7 @@ class Solution1 {
         return answer.sorted()
     }
 }
-
 fun main() {
-    val answer = Solution1().solution(arrayOf("XYZ", "XWY", "WXA"), intArrayOf(2, 3, 4))
+    val answer = Solution2().solution(arrayOf("XYZ", "XWY", "WXA"), intArrayOf(2, 3, 4))
     println(answer)
 }
