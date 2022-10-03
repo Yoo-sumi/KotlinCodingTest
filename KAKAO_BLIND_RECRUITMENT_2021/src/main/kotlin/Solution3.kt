@@ -1,26 +1,29 @@
 class Solution3 {
     fun solution(n: Int, s: Int, a: Int, b: Int, fares: Array<IntArray>): Int {
         val INF = 200 * 100000 * 2
-        val distance = (0 .. n).map { (0 .. n).map { INF }.toMutableList() }
-        for (i in (1 .. n)) {
+        val distance = (0 until n).map { (0 until n).map { INF }.toMutableList() }
+        for (i in (0 until n)) {
             distance[i][i] = 0
         }
         fares.forEach {
             val (a, b, c) = it
-            distance[a][b] = c
-            distance[b][a] = c
+            distance[a-1][b-1] = c
+            distance[b-1][a-1] = c
         }
-        for (k in (1 .. n)) {
-            for (i in (1 .. n)) {
-                for (j in (1 .. n)) {
+        for (k in (0 until n)) {
+            for (i in (0 until n)) {
+                for (j in (0 until n)) {
                     if (distance[i][k] + distance[k][j] < distance[i][j]) {
                         distance[i][j] = distance[i][k] + distance[k][j]
                     }
                 }
             }
         }
+        val s = s-1
+        val a = a-1
+        val b = b-1
         var answer = INF
-        for (i in (1 .. n)) {
+        for (i in (0 until n)) {
             answer = Math.min(distance[s][i] + distance[i][a] + distance[i][b], answer)
         }
         return answer
