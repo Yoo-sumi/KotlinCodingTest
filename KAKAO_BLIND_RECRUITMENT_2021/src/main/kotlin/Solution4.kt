@@ -1,3 +1,4 @@
+// 광고 삽입
 class Solution4 {
     fun decodeConvert(time: Int): String {
         var mm = time / 60

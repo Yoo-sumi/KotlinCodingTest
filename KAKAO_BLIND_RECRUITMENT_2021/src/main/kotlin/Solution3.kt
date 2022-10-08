@@ -1,3 +1,4 @@
+// 합승 택시 요금
 class Solution3 {
     fun solution(n: Int, s: Int, a: Int, b: Int, fares: Array<IntArray>): Int {
         val INF = 200 * 100000 * 2
