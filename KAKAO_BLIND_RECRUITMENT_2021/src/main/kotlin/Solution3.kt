@@ -36,3 +36,6 @@ fun main() {
     val answer = Solution3().solution(6, 4, 6, 2, arrayOf(intArrayOf(4, 1, 10), intArrayOf(3, 5, 24), intArrayOf(5, 6, 2), intArrayOf(3, 1, 41), intArrayOf(5, 1, 24), intArrayOf(4, 6, 50), intArrayOf(2, 4, 66), intArrayOf(2, 3, 22), intArrayOf(1, 6, 25)))
     println(answer)
 }
+
+// Math.min()으로 계속 비교하는것보다 if 문으로 값을 비교해서 갱신해주는게 더 빠르다.
+// 호율성을 높이고 싶다면 max(), min() 보다는 if 문으로 걸러주면 된다.
