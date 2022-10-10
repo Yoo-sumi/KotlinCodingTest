@@ -1,6 +1,3 @@
-import java.io.BufferedReader
-import java.io.InputStreamReader
-
 // https://www.acmicpc.net/problem/18405
 class Solution3(val n: Int, val k: Int) {
     var graph = MutableList(n) { MutableList(n) { 0 } }
