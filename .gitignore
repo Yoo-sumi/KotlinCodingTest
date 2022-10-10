@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/kotlin,intellij,git,gradle
 # Edit at https://www.toptal.com/developers/gitignore?templates=kotlin,intellij,git,gradle
 
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
 ### Git ###
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false
