@@ -1,43 +1,34 @@
-// https://www.acmicpc.net/problem/1918
+// https://www.acmicpc.net/problem/1935
 
 class Solution12 {
-    fun getScore(c: Char): Int {
-        return when(c) {
-            '+', '-' -> 1
-            '*', '/' -> 2
-            else -> 0
+    val num = mutableListOf<Double>()
+    fun oper(op: Char, a: Double, b: Double): Double {
+        val x = a
+        val y = b
+        return when(op) {
+            '+' -> x+y
+            '-' -> x-y
+            '*' -> x*y
+            else -> x/y
         }
     }
     fun solution() {
-        val li = readln().toList()
-        val stack = mutableListOf<Char>()
-        val result = mutableListOf<Char>()
-        for (i in li.indices) {
-            if (li[i] in 'A'..'Z') {
-                result.add(li[i])
-            }
-            else {
-                if (li[i] == '(') stack.add(li[i])
-                else if (li[i] == ')') {
-                    while (stack.isNotEmpty() && stack[stack.lastIndex] != '(') {
-                        result.add(stack.removeLast())
-                    }
-                    stack.removeLast()
-                }
-                else {
-                    while (stack.isNotEmpty() && getScore(stack[stack.lastIndex]) >= getScore(li[i])) {
-                        result.add(stack.removeLast())
-                    }
-                    stack.add(li[i])
-                }
+        val n = readln().toInt()
+        val li = readln().toMutableList()
+        repeat(n) {
+            num.add(readln().toDouble())
+        }
+        val stack = mutableListOf<Double>()
+        li.forEach {
+            if (it in listOf('+', '-' ,'*', '/')) {
+                val a = stack.removeLast()
+                val b = stack.removeLast()
+                stack.add(oper(it, b, a))
+            } else {
+                stack.add(num[it.code-65])
             }
         }
-        while (stack.isNotEmpty()) {
-            result.add(stack.removeLast())
-        }
-        result.forEach {
-            print(it)
-        }
+        println("${String.format("%.2f", stack[stack.lastIndex])}")
     }
 }
 
