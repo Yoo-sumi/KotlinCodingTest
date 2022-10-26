@@ -62,8 +62,8 @@ class Solution8(val n: Int, val m: Int) {
 }
 
 data class Point(
-    val x: Int,
-    val y: Int
+    var x: Int,
+    var y: Int
 )
 
 fun main() {
