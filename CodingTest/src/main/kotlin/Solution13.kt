@@ -21,7 +21,7 @@ class Solution13(val n: Int, val m: Int) {
                     flag = false
                     return@repeat
                 }
-                if (graph[nx][ny] <= k && visited[nx][ny] == 0) {
+                if (graph[nx][ny] < k && visited[nx][ny] == 0) {
                     q.add(Temp(nx, ny))
                     visited[nx][ny] = 1
                     count++
@@ -37,11 +37,11 @@ class Solution13(val n: Int, val m: Int) {
         repeat(n) {
             graph[it] = readln().map { it.digitToInt() }
         }
-        for (k in 1 until 10 ) {
+        for (k in 2 until 10 ) {
             visited = Array(n) { Array(m) { 0 } }
             for (i in 0 until n) {
                 for (j in 0 until m) {
-                    if (visited[i][j] == 0 && graph[i][j] <= k) {
+                    if (visited[i][j] == 0 && graph[i][j] < k) {
                         bfs(i, j, k)
                     }
                 }
