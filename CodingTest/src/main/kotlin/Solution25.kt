@@ -1,3 +1,5 @@
+// https://www.acmicpc.net/problem/10159
+
 class Solution25(val n: Int) {
     var map = Array(n) { Array(n) { 1e9.toInt() } }
 
@@ -36,3 +38,8 @@ class Solution25(val n: Int) {
 fun main() {
     Solution25(readln().trim().toInt()).solution()
 }
+
+/*
+무거운게 작은 노드를 가리킨다.
+플로이드 와샬 알고리즘을 이용해서 이동해서 갈 수 있는 곳인지 판단한다.
+*/
