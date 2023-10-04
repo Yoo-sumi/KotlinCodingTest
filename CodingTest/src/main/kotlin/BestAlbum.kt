@@ -53,3 +53,16 @@ fun main(args: Array<String>) {
         print("$it ")
     }
 }
+
+
+//["classic", "pop", "classic", "classic", "pop"]	[500, 600, 150, 800, 2500]	[4, 1, 3, 0]
+//
+//classic : 500 150 800 => 1450
+//
+//pop: 600 2500 => 3100
+//
+//1. classic, pop 정렬 > 1) 재생횟수 DESC, 2) 고유번호 ASC
+//2. 선별
+//조건 1) 장르별 sum 비교
+//조건 2) 각 장르에서 2개씩 선별
+//- 곡의 개수가 1개이면 1개만
